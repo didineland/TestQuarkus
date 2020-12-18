@@ -1,0 +1,23 @@
+quarkus:
+  datasource:
+    db-kind: postgresql
+    jdbc:
+      url: jdbc:postgresql://localhost:5432/user
+    password: password
+    username: user
+
+  hibernate-orm:
+    database:
+      default-schema: payment
+      generation: drop-and-create
+
+  http:
+    cors: true
+
+  oidc:
+    auth-server-url: https://dev-s47-dfxc.us.auth0.com
+    client-id: xxx
+    roles:
+      role-claim-path: permissions
+    token:
+      audience: Billbucket
